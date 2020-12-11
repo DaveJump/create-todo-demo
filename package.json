@@ -1,0 +1,28 @@
+{
+  "name": "@djp6/create-todo-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "DaveJump",
+  "license": "MIT",
+  "scripts": {
+    "release:patch": "bash ./release.sh patch",
+    "release:minor": "bash ./release.sh minor",
+    "release:major": "bash ./release.sh major"
+  },
+  "bin": {
+    "create-todo-demo": "index.js",
+    "ctd": "index.js"
+  },
+  "files": [
+    "index.js",
+    "todo-*"
+  ],
+  "engines": {
+    "node": ">=8.10"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "fs-extra": "^9.0.1",
+    "minimist": "^1.2.5"
+  }
+}
