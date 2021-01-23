@@ -37,6 +37,7 @@ Available templates:
 
 * vue3-vite (default)
 * react-hooks
+* nuxt-tailwind
 
 Scaffolding with specific template:
 

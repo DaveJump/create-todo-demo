@@ -8,7 +8,7 @@ runRelease() {
     git config user.name "DaveJump"
     git config user.email "davejump@foxmail.com"
     git tag $VERSION
-    git push --follow-tags origin master
+    git push --follow-tags origin main
     nrm use npm
     npm version $VERSION
     npm publish --access public
