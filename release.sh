@@ -1,5 +1,7 @@
 #!/bin/bash
 VERSION="minor"
+TAGMSG="$2"
+
 checkSemver() {
   [[ "$1" == "patch" || "$1" == "minor" || "$1" == "major" ]]
 }
@@ -7,7 +9,11 @@ runRelease() {
   if checkSemver $VERSION;then
     git config user.name "DaveJump"
     git config user.email "davejump@foxmail.com"
-    git tag $VERSION
+    if [ $TAGMSG ];then
+      git tag $VERSION -m "$TAGMSG"
+    else
+      git tag $VERSION
+    fi
     git push --follow-tags origin main
     nrm use npm
     npm version $VERSION
