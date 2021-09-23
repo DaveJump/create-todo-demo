@@ -9,15 +9,15 @@ runRelease() {
   if checkSemver $VERSION;then
     git config user.name "DaveJump"
     git config user.email "davejump@foxmail.com"
-    if [ $TAGMSG ];then
-      git tag $VERSION -m "$TAGMSG"
-    else
-      git tag $VERSION
-    fi
-    git push --follow-tags origin main
+    # if [ $TAGMSG ];then
+    #   git tag $VERSION -m "$TAGMSG"
+    # else
+    #   git tag $VERSION
+    # fi
     nrm use npm
     npm version $VERSION
     npm publish --access public
+    git push --follow-tags origin main
   else
     echo "version is invalid !"
     exit
