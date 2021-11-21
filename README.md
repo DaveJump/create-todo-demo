@@ -35,10 +35,10 @@ $ npm run dev (or 'yarn dev')
 
 Available templates:
 
-* vue3-vite (default)
-* react-hooks
-* nuxt-tailwind
-* vue3-setup-rfc-vite
+- vue3-vite (default)
+- react-hooks
+- nuxt-tailwind
+- vue3-setup-rfc-vite
 
 Scaffolding with specific template:
 

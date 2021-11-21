@@ -13,7 +13,9 @@
     "release": "bash ./release.sh",
     "release:patch": "bash ./release.sh patch",
     "release:minor": "bash ./release.sh minor",
-    "release:major": "bash ./release.sh major"
+    "release:major": "bash ./release.sh major",
+    "format": "prettier --write .",
+    "rename": "node dev-helper.js"
   },
   "bin": {
     "create-todo-demo": "index.js",
@@ -24,12 +26,16 @@
     "todo-*"
   ],
   "engines": {
-    "node": ">=8.10"
+    "node": ">=10.10"
   },
   "dependencies": {
     "chalk": "^4.1.0",
     "fs-extra": "^9.0.1",
     "minimist": "^1.2.5",
     "prompts": "^2.4.1"
+  },
+  "devDependencies": {
+    "fast-glob": "^3.2.7",
+    "prettier": "^2.4.1"
   }
 }

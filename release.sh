@@ -1,4 +1,5 @@
 #!/bin/bash
+
 VERSION="minor"
 TAGMSG="$2"
 
@@ -8,7 +9,7 @@ checkSemver() {
 runRelease() {
   if checkSemver $VERSION;then
     git config user.name "DaveJump"
-    git config user.email "davejump@foxmail.com"
+    git config user.email "davejump6@foxmail.com"
     # if [ $TAGMSG ];then
     #   git tag $VERSION -m "$TAGMSG"
     # else
@@ -19,7 +20,7 @@ runRelease() {
     npm publish --access public
     git push --follow-tags origin main
   else
-    echo "version is invalid !"
+    echo "Invalid version!"
     exit
   fi
 }
