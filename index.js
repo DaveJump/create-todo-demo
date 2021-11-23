@@ -133,14 +133,20 @@ async function create() {
 
   const pkgManager = pkgInfo ? pkgInfo.name : 'npm'
 
+  const targetManifest = require(path.resolve(cwd, relativePath, 'package.json'))
+  let startScript = 'dev'
+  if (targetManifest.scripts.start) {
+    startScript = 'start'
+  }
+
   switch (pkgManager) {
     case 'yarn':
       log.success(`  yarn`)
-      log.success(`  yarn dev`)
+      log.success(`  yarn ${startScript}`)
       break
     default:
       log.success(`  ${pkgManager} install`)
-      log.success(`  ${pkgManager} run dev`)
+      log.success(`  ${pkgManager} run ${startScript}`)
       break
   }
   log()
