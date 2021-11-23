@@ -39,6 +39,7 @@ Available templates:
 - react-hooks
 - nuxt-tailwind
 - vue3-setup-rfc-vite
+- react-native-expo
 
 Scaffolding with specific template:
 
